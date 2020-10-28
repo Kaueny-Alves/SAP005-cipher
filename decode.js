@@ -1,29 +1,26 @@
-// export function decode(offset,letras) {
+export function decode(offset,string) {
 
-// // if(offset === null ||  letras === [] )
+  let posicaoDecodificada;
+  let palavraConcatenada ="";
+  let validacao;
 
+  for (let i = 0; i < string.length; i++) {
 
-//   let posicaoDecodificada;
-//   let palavraConcatenada ="";
-//   let validacao;
+      validacao = string.charCodeAt(i) - 65 - offset
 
-//   for (let i = 0; i < letras.length; i++) {
+      if (validacao >= 0 ){
+          posicaoDecodificada = (((string.charCodeAt(i)) - 65 - offset ) % 26) + 65;
 
-//       validacao = letras.charCodeAt(i) - 65 - offset
+      }else {
+          posicaoDecodificada = string.charCodeAt(i)  - offset + 26
+      }
 
-//       if (validacao >= 0){
-//           posicaoDecodificada = (((letras.charCodeAt(i)) - 65 - offset ) % 26) + 65;
+      palavraConcatenada += String.fromCharCode(posicaoDecodificada);
 
-//       }else {
-//           posicaoDecodificada = letras.charCodeAt(i)  - offset + 26
-//       }
+  }
 
-//       palavraConcatenada += String.fromCharCode(posicaoDecodificada);
-
-//   }
-
-//   return palavraConcatenada
-// }
+  return palavraConcatenada
+}
 
 
 
