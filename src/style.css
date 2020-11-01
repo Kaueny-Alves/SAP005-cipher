@@ -1,8 +1,15 @@
 body {
-  display: block;
+  display: grid;
   text-align: center;
   background-color: white;
   color: #222;
+}
+
+section {
+  border: 1pt solid black;
+  width: 400px;
+  height: 400px;
+  margin: 10px;
 }
 
 #cabecalho {
@@ -13,7 +20,7 @@ body {
 }
 
 #cod {
-  color: green;
+  color: rgb(2, 97, 2);
 }
 
 #decod {

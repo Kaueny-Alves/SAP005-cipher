@@ -2,28 +2,24 @@
 
 export function encode(offset, string) {
 
-  // if(offset === null ||  letras === [] ){
-  //  throw TypeError()
-  // }
+  if(offset === null || string === [] && offset === 0 || string === 0){
+    throw new TypeError("Insira uma mensagem e um offset.")
+}
 
-  offset = parseInt(document.getElementById("offset").value)
-  string = document.getElementById("codificar").value
-
+  let tamAlfabeto = 26
+  let posicao1Letra = 65
   let posicaoCodificada;
   let palavraConcatenada ="";
 
   for (let i = 0; i < string.length; i++) {
 
-
-      posicaoCodificada = (((string.charCodeAt(i)) - 65 + offset ) % 26) + 65
-
+      posicaoCodificada = (((string.charCodeAt(i)) - posicao1Letra + offset ) % tamAlfabeto) + posicao1Letra
       palavraConcatenada += String.fromCharCode(posicaoCodificada);
-
   }
 
-  return document.getElementById("decodificar").innerHTML= `${palavraConcatenada}`
-  }
+  return palavraConcatenada
 
+  }
 
 
 
