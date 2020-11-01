@@ -1,28 +1,20 @@
-export function decode(offset,string) {
+export function decode(offset, string) {
 
+  if(offset === null || string === [] && offset === 0 || string === 0){
+        throw new TypeError("Insira uma mensagem e um offset.")
+    }
+
+
+  let tamAlfabeto = 26
+  let posicao1Letra = 65
   let posicaoDecodificada;
   let palavraConcatenada ="";
-  let validacao;
 
   for (let i = 0; i < string.length; i++) {
 
-      validacao = string.charCodeAt(i) - 65 - offset
-
-      if (validacao >= 0 ){
-          posicaoDecodificada = (((string.charCodeAt(i)) - 65 - offset ) % 26) + 65;
-
-      }else {
-          posicaoDecodificada = string.charCodeAt(i)  - offset + 26
-      }
-
+      posicaoDecodificada = ((string.charCodeAt(i) + posicao1Letra - offset) % tamAlfabeto) + posicao1Letra
       palavraConcatenada += String.fromCharCode(posicaoDecodificada);
-
   }
 
   return palavraConcatenada
 }
-
-
-
-
-
