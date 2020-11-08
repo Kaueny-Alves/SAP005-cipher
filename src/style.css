@@ -1,22 +1,26 @@
 body {
-  display: grid;
   text-align: center;
-  background-color: white;
-  color: #222;
 }
 
-section {
-  border: 1pt solid black;
-  width: 400px;
-  height: 400px;
-  margin: 10px;
+img {
+  max-width: 200px;
+  max-height: 200px;
 }
 
-#cabecalho {
-  padding: 0px;
-  margin: 0px;
-  color: #222;
-  background-color: #fb5;
+.root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.box {
+  background-color: rgb(236, 234, 234);
+  color: #444;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  width: 300px;
 }
 
 #cod {
