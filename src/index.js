@@ -20,4 +20,3 @@ function descrip(event) {
   let offsetDescrip = parseInt(document.getElementById("offsetDescrip").value);
   document.getElementById("mensagemDecodificada").value = cipher.decode(offsetDescrip, stringDescrip);
 }
-
